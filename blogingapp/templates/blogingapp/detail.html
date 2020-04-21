@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body style="background-color: rgb(96, 203, 230);">
+    {% load static %}
+
+    <nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand">Blogsite</a>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+
+    {% if blog %}
+    <!-- <p>{{id.title}}</p> -->
+
+    <div class="card mb-3 card text-light " style="max-width: 540px;">
+      
+        <div class="row no-gutters bg-danger" style="margin: 2px ;">
+          <div class="col-md-4">
+            <img src="/media/{{blog.blog_img}}" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ blog.title }}</h5>
+              <p class="card-text">{{ blog.description }}</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+      </div>
+      <br>
+      
+    
+    {% else %}
+    <p>No blogs are available.</p>
+    {% endif %}
+</body>
+</html>
